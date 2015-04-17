@@ -11,6 +11,11 @@
 <p ng-hide="editing"> {{ recipe.directions }} </p>
 <textarea ng-show="editing" ng-model="recipe.directions"></textarea>
 
+<ul>
+    <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
+</ul>
+
+
 <br>
 <button class="btn btn-sm btn-danger glyphicon glyphicon-trash"
         ng-click="deleteRecipe()"> Delete </button>
