@@ -48,7 +48,7 @@
     padding: inherit;
     padding-top: 1px;
     margin-top: 30px;
-    height: 500px;
+    height: 300px;
 }
 
 .recipe-card a {
@@ -56,7 +56,7 @@
 }
 
 .recipe-card a:hover {
-    color: red;
+    color: white;
 }
 
 .recipe-card-image {
