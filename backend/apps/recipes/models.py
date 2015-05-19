@@ -1,16 +1,13 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
 
-# Create your models here.
-
-
-class UserProfile(models.Model):
-    User = models.OnetoOneField('User', related_name='profile')
-    Address = models.CharField(max_length=100)
-    City = models.CharField(max_length=100)
-    State = models.CharField(max_length=100)
-    Zip = models.CharField(max_length=30)
-
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=50)
@@ -25,7 +22,6 @@ class Recipe(models.Model):
     directions = models.TextField()
     ingredients = models.ManyToManyField(Ingredient)
     photo = models.ImageField(upload_to='photos', blank=True, null=True)
-    owner = models.ForeignKey('User', related_name='recipes')
 
     def __str__(self):
         return self.name

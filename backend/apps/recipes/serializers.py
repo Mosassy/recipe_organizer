@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from models import Recipe, Ingredient
+from django.contrib.auth.models import User
+
 
 
 class IngredientSerializer(serializers.ModelSerializer):
@@ -88,4 +90,9 @@ class RecipeSerializer(serializers.ModelSerializer):
         instance.ingredients = ingredients_list
         instance.save()
         return instance
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'first_name', 'last_name', 'username', 'email')
 
