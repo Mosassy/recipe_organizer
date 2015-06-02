@@ -14,7 +14,7 @@ angular.module('myApp', [
 ]).
     config(['$routeProvider', 'RestangularProvider', function ($routeProvider, RestangularProvider) {
         $routeProvider.otherwise({redirectTo: '/recipes'});
-        RestangularProvider.setBaseUrl('http://localhost:8001');
+        RestangularProvider.setBaseUrl('http://recipes.mosassy.com/api');
         RestangularProvider.setRequestSuffix('/');
     }])
     .controller('AppCtrl', function (User, $scope, Restangular, $location) {
