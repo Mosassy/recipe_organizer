@@ -9,9 +9,10 @@ angular.module('myApp.addRecipe', ['ngRoute'])
   });
 }])
 
-.controller('AddRecipeCtrl', ['$scope', 'Restangular', function ($scope, Restangular) {
+.controller('AddRecipeCtrl', ['$scope', 'Restangular', 'User', function ($scope, Restangular, User) {
 
         $scope.recipe = {
+            owner: User.info.id,
             ingredients: []
         };
 

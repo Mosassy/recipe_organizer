@@ -34,7 +34,7 @@
 }
 
 .site-foreground {
-    background-color: #	#FFFFFF;
+    background-color: #aFeeee;
 }
 
 .navbar {
@@ -70,4 +70,22 @@
     background-color: #f8f8f8;
     border-color: #e7e7e7;
     color: #B22222;
+}
+
+.login {
+    width: 300px;
+    border: 1px solid;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+
+.registration {
+    width: 300px;
+    border: 1px solid;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%
 }
